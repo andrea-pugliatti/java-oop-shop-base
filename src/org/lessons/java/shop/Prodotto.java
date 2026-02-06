@@ -5,18 +5,62 @@ import java.math.RoundingMode;
 import java.util.Random;
 
 public class Prodotto {
-    public int codice;
-    public String nome;
-    public String descrizione;
-    public BigDecimal prezzo;
-    public BigDecimal iva;
+    private int codice;
+    private String nome;
+    private String descrizione;
+    private BigDecimal prezzo;
+    private BigDecimal iva;
 
     public Prodotto(String nome, String descrizione, BigDecimal prezzo, BigDecimal iva) {
-        Random r = new Random();
-        this.codice = r.nextInt(10000);
+        this();
         this.nome = nome;
         this.descrizione = descrizione;
         this.prezzo = prezzo;
+        this.iva = iva;
+    }
+
+    public Prodotto() {
+        Random r = new Random();
+        this.codice = r.nextInt(10000);
+        this.nome = "";
+        this.descrizione = "";
+        this.prezzo = new BigDecimal(0);
+        this.iva = new BigDecimal(0);
+    }
+
+    public int getCodice() {
+        return this.codice;
+    }
+
+    public String getNome() {
+        return this.nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getDescrizione() {
+        return this.descrizione;
+    }
+
+    public void setDescrizione(String descrizione) {
+        this.descrizione = descrizione;
+    }
+
+    public BigDecimal getPrezzo() {
+        return this.prezzo;
+    }
+
+    public void setPrezzo(BigDecimal prezzo) {
+        this.prezzo = prezzo;
+    }
+
+    public BigDecimal getIva() {
+        return this.iva;
+    }
+
+    public void setIva(BigDecimal iva) {
         this.iva = iva;
     }
 
