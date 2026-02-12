@@ -77,7 +77,7 @@ public class Prodotto {
     }
 
     public String getNomeCompleto() {
-        if (prezzo != null && iva != null) {
+        if (this.nome != null) {
             return this.codice + "-" + this.nome;
         }
         return null;
